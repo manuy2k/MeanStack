@@ -1,0 +1,33 @@
+<mat-card>
+  <form (submit)="savePost(postData)" #postData="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="enteredTitle"
+        required
+        minlength=3
+        placeholder="Title"
+        ngModel>
+        <mat-error>Enter the title(min 3 characters)</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="5"
+        name=enteredContent
+        required
+        minlength=5
+        placeholder="Content"
+        ngModel></textarea>
+        <mat-error>Enter the content(min 5 characters)</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      [disabled]="postData.invalid"
+      type="submit">Save Post</button>
+  </form>
+</mat-card>
