@@ -1,18 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { formatOfPost } from './../formatof.post';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostHandlerService {
 
-  constructor() { }
+  constructor(private http: HttpClient ) {
+
+  }
   private postData : formatOfPost[] = [];
   private v_subject = new Subject<formatOfPost[]>();
 
   getData() {
-    return [...this.postData];
+    //return [...this.postData];
+    this.http.get("http://localhost:3000/api/posts")
   }
 
   getPostsObs(){
