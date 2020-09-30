@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule,
          MatInputModule,
@@ -36,7 +37,8 @@ import { MatCardModule,
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
